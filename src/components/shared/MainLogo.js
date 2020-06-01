@@ -18,7 +18,7 @@ class MainLogo extends Component {
                 loggedIn: true
             })
             
-            axios.get("http://localhost:4242/auth", {
+            axios.get("https://wsc-project2-thunder.herokuapp.com/auth", {
                 headers: {
                     'x-access-token': localStorage.getItem("token"),
                 }
