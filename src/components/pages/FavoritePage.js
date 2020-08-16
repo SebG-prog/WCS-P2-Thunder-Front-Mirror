@@ -6,8 +6,6 @@ import NavbarFooter from '../shared/NavbarFooter';
 import NavbarHeader from '../shared/NavbarHeader';
 import ScrollToTop from '../shared/ScrollToTop';
 
-import API_KEY from '../../secret';
-
 import './FavoritePage.css'
 
 const FavoritePage = (props) => {
@@ -25,7 +23,7 @@ const FavoritePage = (props) => {
                 axios.get(`https://api.napster.com/v2.2/tracks/${allFavorites}`,
                     {
                         params: {
-                            apikey: API_KEY
+                            apikey: process.env.REACT_APP_NAPSTER_API_KEY
                         }
                     })
                     .then(res => {
@@ -74,7 +72,7 @@ const FavoritePage = (props) => {
                     axios.get(`https://api.napster.com/v2.2/tracks/${allFavorites}`,
                         {
                             params: {
-                                apikey: API_KEY
+                                apikey: process.env.REACT_APP_NAPSTER_API_KEY
                             }
                         })
                         .then(res => {

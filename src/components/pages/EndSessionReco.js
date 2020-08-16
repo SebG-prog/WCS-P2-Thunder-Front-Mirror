@@ -4,8 +4,6 @@ import Axios from 'axios';
 import NavbarFooter from '../shared/NavbarFooter';
 import NavbarHeader from '../shared/NavbarHeader';
 
-import API_KEY from '../../secret';
-
 import './EndSessionReco.css';
 
 class EndSessionReco extends React.Component {
@@ -25,7 +23,7 @@ class EndSessionReco extends React.Component {
                 Axios.get(`https://api.napster.com/v2.2/artists/${artist.artistTrack.artistId}/similar`,
                     {
                         params: {
-                            apikey: API_KEY,
+                            apikey: process.env.REACT_APP_NAPSTER_API_KEY,
                         }
                     })
                     .then(res => {

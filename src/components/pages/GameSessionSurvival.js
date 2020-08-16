@@ -10,8 +10,6 @@ import GameSessionInterface from "./GameSessionInterface";
 import GameSessionPointSystem from "./GameSessionPointSystem";
 import Loader from '../Loader/Loader';
 
-import API_KEY from '../../secret'
-
 import vinyl from '../../images/vinyl.png'
 
 import './GameSessionSurvival.css'
@@ -48,7 +46,7 @@ class GameSessionSurvival extends React.Component {
         axios.get(`http://api.napster.com/v2.2/tracks/top`,
             {
                 params: {
-                    apikey: API_KEY,
+                    apikey: process.env.REACT_APP_NAPSTER_API_KEY,
                     limit: rounds
                 }
             })

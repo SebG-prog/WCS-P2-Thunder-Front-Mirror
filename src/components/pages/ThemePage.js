@@ -7,8 +7,6 @@ import NavbarHeader from '../shared/NavbarHeader';
 import NavbarFooter from '../shared/NavbarFooter';
 import ScrollToTop from '../shared/ScrollToTop';
 
-import API_KEY from '../../secret';
-
 import './ThemePage.css';
 
 const themeBackgroundColor = ['Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8', 'Class9', 'Class10', 'Class11', 'Class12', 'Class13', 'Class14', 'Class15', 'Class16', 'Class17', 'Class18', 'Class19', 'Class20', 'Class21', 'Class22'
@@ -25,7 +23,7 @@ class ThemePage extends Component {
     getGenresList = async () => {
         this.setState({ isLoaded: false })
         await axios.get(`http://api.napster.com/v2.2/genres`,
-            { params: { apikey: API_KEY, lang: "en-US" } })
+            { params: { apikey: process.env.REACT_APP_NAPSTER_API_KEY, lang: "en-US" } })
             .then(res => this.setState({ genresList: res.data.genres.slice(0, 21), isLoaded: true }))
     }
 

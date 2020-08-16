@@ -8,8 +8,6 @@ import ScrollToTop from '../shared/ScrollToTop';
 import UserTrackSample from './UserTrackSample';
 import UserScoreSample from "./UserScoreSample";
 
-import API_KEY from '../../secret';
-
 import './UserPage.css'
 
 const UserPage = () => {
@@ -42,7 +40,7 @@ const UserPage = () => {
                 axios.get(`https://api.napster.com/v2.2/tracks/${sampleFavorites}`,
                     {
                         params: {
-                            apikey: API_KEY
+                            apikey: process.env.REACT_APP_NAPSTER_API_KEY
                         }
                     })
                     .then(response => {
