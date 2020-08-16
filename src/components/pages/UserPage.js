@@ -18,7 +18,7 @@ const UserPage = () => {
     const [isPaused, setIsPaused] = useState([])
 
     const getUsername = () => {
-        setLoggedIn(true)
+        if (!loggedIn) {setLoggedIn(true)}        
         axios.get(process.env.REACT_APP_SERVER_URL + "/auth", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
@@ -28,7 +28,10 @@ const UserPage = () => {
         })
     }
 
-    useEffect(() => (localStorage.getItem("token")) ? getUsername() : setLoggedIn(false), [])
+    useEffect(() => (
+        localStorage.getItem("token")) ? getUsername() : setLoggedIn(false)
+        // eslint-disable-next-line
+        , [])
 
     const getFavoriteSample = () => {
         axios.get(process.env.REACT_APP_SERVER_URL + "/favorite", {
