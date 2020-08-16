@@ -20,7 +20,7 @@ class EndSessionRank extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://wsc-project2-thunder.herokuapp.com/ranking/standard/${this.state.genre}`)
+        axios.get(process.env.REACT_APP_SERVER_URL + `/ranking/standard/${this.state.genre}`)
             .then(result => {
                 this.setState({ scoresDB: result.data })
             })

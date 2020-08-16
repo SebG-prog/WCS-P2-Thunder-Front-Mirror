@@ -10,8 +10,6 @@ import GameSessionInterface from "./GameSessionInterface";
 import GameSessionPointSystem from "./GameSessionPointSystem";
 import Loader from '../Loader/Loader';
 
-import API_KEY from '../../secret'
-
 import './GameSession.css'
 
 const rounds = 5
@@ -46,7 +44,7 @@ class GameSession extends React.Component {
         axios.get(`https://api.napster.com/v2.2/genres/${genresCode}/artists/top`,
             {
                 params: {
-                    apikey: API_KEY,
+                    apikey: process.env.REACT_APP_NAPSTER_API_KEY,
                     limit: rounds
                 }
             })
@@ -63,7 +61,7 @@ class GameSession extends React.Component {
         axios.get(`https://api.napster.com/v2.2/artists/${artistID}/tracks/top`,
             {
                 params: {
-                    apikey: API_KEY
+                    apikey: process.env.REACT_APP_NAPSTER_API_KEY
                 }
             })
             .then(res => {

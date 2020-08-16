@@ -8,8 +8,6 @@ import ScrollToTop from '../shared/ScrollToTop';
 import UserTrackSample from './UserTrackSample';
 import UserScoreSample from "./UserScoreSample";
 
-import API_KEY from '../../secret';
-
 import './UserPage.css'
 
 const UserPage = () => {
@@ -20,8 +18,8 @@ const UserPage = () => {
     const [isPaused, setIsPaused] = useState([])
 
     const getUsername = () => {
-        setLoggedIn(true)
-        axios.get("https://wsc-project2-thunder.herokuapp.com/auth", {
+        if (!loggedIn) {setLoggedIn(true)}        
+        axios.get(process.env.REACT_APP_SERVER_URL + "/auth", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
             }
@@ -30,10 +28,13 @@ const UserPage = () => {
         })
     }
 
-    useEffect(() => (localStorage.getItem("token")) ? getUsername() : setLoggedIn(false), [])
+    useEffect(() => (
+        localStorage.getItem("token")) ? getUsername() : setLoggedIn(false)
+        // eslint-disable-next-line
+        , [])
 
     const getFavoriteSample = () => {
-        axios.get("https://wsc-project2-thunder.herokuapp.com/favorite", {
+        axios.get(process.env.REACT_APP_SERVER_URL + "/favorite", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
                 }
@@ -42,7 +43,7 @@ const UserPage = () => {
                 axios.get(`https://api.napster.com/v2.2/tracks/${sampleFavorites}`,
                     {
                         params: {
-                            apikey: API_KEY
+                            apikey: process.env.REACT_APP_NAPSTER_API_KEY
                         }
                     })
                     .then(response => {
@@ -77,7 +78,7 @@ const UserPage = () => {
     }
 
     const getScoreSample = () => {
-        axios.get("https://wsc-project2-thunder.herokuapp.com/ranking/allscores", {
+        axios.get(process.env.REACT_APP_SERVER_URL + "/ranking/allscores", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
                 }

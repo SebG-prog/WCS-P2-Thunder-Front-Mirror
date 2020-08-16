@@ -18,7 +18,7 @@ const AuthPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setUsername(e.target.username.value)
-        axios.post("https://wsc-project2-thunder.herokuapp.com/auth/login", {
+        axios.post(process.env.REACT_APP_SERVER_URL + "/auth/login", {
             username: e.target.username.value,
             password: e.target.password.value
         }).then(res => {

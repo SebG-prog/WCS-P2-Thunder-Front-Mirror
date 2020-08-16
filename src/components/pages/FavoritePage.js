@@ -6,8 +6,6 @@ import NavbarFooter from '../shared/NavbarFooter';
 import NavbarHeader from '../shared/NavbarHeader';
 import ScrollToTop from '../shared/ScrollToTop';
 
-import API_KEY from '../../secret';
-
 import './FavoritePage.css'
 
 const FavoritePage = (props) => {
@@ -16,7 +14,7 @@ const FavoritePage = (props) => {
 
     const getFavoriteTrackList = () => {
         if (localStorage.getItem("token")) {
-            axios.get("https://wsc-project2-thunder.herokuapp.com/favorite", {
+            axios.get(process.env.REACT_APP_SERVER_URL + "/favorite", {
                 headers: {
                     'x-access-token': localStorage.getItem("token"),
                 }
@@ -25,7 +23,7 @@ const FavoritePage = (props) => {
                 axios.get(`https://api.napster.com/v2.2/tracks/${allFavorites}`,
                     {
                         params: {
-                            apikey: API_KEY
+                            apikey: process.env.REACT_APP_NAPSTER_API_KEY
                         }
                     })
                     .then(res => {
@@ -65,7 +63,7 @@ const FavoritePage = (props) => {
     const handleDeleteFavorite = (idtrack) => {
         const remove = window.confirm("Are you sure you want to remove this track from your favorite list?")
         if (remove) {
-            axios.delete(`https://wsc-project2-thunder.herokuapp.com/favorite/tracks/${idtrack}`,
+            axios.delete(process.env.REACT_APP_SERVER_URL + `/favorite/tracks/${idtrack}`,
                 {
                     headers: { 'x-access-token': localStorage.getItem("token") }
 
@@ -74,7 +72,7 @@ const FavoritePage = (props) => {
                     axios.get(`https://api.napster.com/v2.2/tracks/${allFavorites}`,
                         {
                             params: {
-                                apikey: API_KEY
+                                apikey: process.env.REACT_APP_NAPSTER_API_KEY
                             }
                         })
                         .then(res => {
