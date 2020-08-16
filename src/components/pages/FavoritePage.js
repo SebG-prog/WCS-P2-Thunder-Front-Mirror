@@ -16,7 +16,7 @@ const FavoritePage = (props) => {
 
     const getFavoriteTrackList = () => {
         if (localStorage.getItem("token")) {
-            axios.get("https://wsc-project2-thunder.herokuapp.com/favorite", {
+            axios.get(process.env.REACT_APP_SERVER_URL + "/favorite", {
                 headers: {
                     'x-access-token': localStorage.getItem("token"),
                 }
@@ -65,7 +65,7 @@ const FavoritePage = (props) => {
     const handleDeleteFavorite = (idtrack) => {
         const remove = window.confirm("Are you sure you want to remove this track from your favorite list?")
         if (remove) {
-            axios.delete(`https://wsc-project2-thunder.herokuapp.com/favorite/tracks/${idtrack}`,
+            axios.delete(process.env.REACT_APP_SERVER_URL + `/favorite/tracks/${idtrack}`,
                 {
                     headers: { 'x-access-token': localStorage.getItem("token") }
 

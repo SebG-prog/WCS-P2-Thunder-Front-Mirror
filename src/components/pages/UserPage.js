@@ -21,7 +21,7 @@ const UserPage = () => {
 
     const getUsername = () => {
         setLoggedIn(true)
-        axios.get("https://wsc-project2-thunder.herokuapp.com/auth", {
+        axios.get(process.env.REACT_APP_SERVER_URL + "/auth", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
             }
@@ -33,7 +33,7 @@ const UserPage = () => {
     useEffect(() => (localStorage.getItem("token")) ? getUsername() : setLoggedIn(false), [])
 
     const getFavoriteSample = () => {
-        axios.get("https://wsc-project2-thunder.herokuapp.com/favorite", {
+        axios.get(process.env.REACT_APP_SERVER_URL + "/favorite", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
                 }
@@ -77,7 +77,7 @@ const UserPage = () => {
     }
 
     const getScoreSample = () => {
-        axios.get("https://wsc-project2-thunder.herokuapp.com/ranking/allscores", {
+        axios.get(process.env.REACT_APP_SERVER_URL + "/ranking/allscores", {
             headers: {
                 'x-access-token': localStorage.getItem("token"),
                 }

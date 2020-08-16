@@ -12,7 +12,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("https://wsc-project2-thunder.herokuapp.com/register/new_user", {
+        axios.post(process.env.REACT_APP_SERVER_URL + "/register/new_user", {
             username: e.target.username.value,
             password: e.target.password.value
         }).then(res => {

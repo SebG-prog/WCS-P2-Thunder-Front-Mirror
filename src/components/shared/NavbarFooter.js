@@ -22,7 +22,7 @@ class NavbarFooter extends Component {
         if (localStorage.getItem("token")) {
             this.setState({ loggedIn: true })
 
-            axios.get("https://wsc-project2-thunder.herokuapp.com/auth", {
+            axios.get(process.env.REACT_APP_SERVER_URL + "/auth", {
                 headers: {
                     'x-access-token': localStorage.getItem("token"),
                 }
