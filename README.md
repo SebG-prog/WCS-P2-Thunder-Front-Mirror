@@ -1,70 +1,95 @@
-This project needs a better README.md file
+# Thunder
+👉[The app is live here](https://thunder-app.netlify.app) 👈 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Thunder** is a responsive musical quiz web application which gives the opportunity to enrich our musical knowledge.
 
-## Available Scripts
+The user will test his current knowledge by guessing the artist name of the song being played. The user also has the opportunity to save his favorite tracks and top scores thanks to the authentification system. Finally, at the end of each game session, our recommendation system will provide the list of similar artists based on the songs played during the game. 
 
-In the project directory, you can run:
+## The team
 
-### `npm start`
+* Sébastien Gruet [Github](https://github.com/SebG-prog) - [LinkedIn](https://www.linkedin.com/in/sébastien-gruet/)
+* Claire Kodia [Github](https://github.com/clrko') - [LinkedIn](https://www.linkedin.com/in/clairekodia/)
+* Stéphane Pinto [Github](https://github.com/pinto78600) - [LinkedIn](https://www.linkedin.com/in/stephane-pinto/)
+* Maxime Poitoux [Github](https://github.com/MaximePoitoux) - [LinkedIn](https://www.linkedin.com/in/maximepoitoux/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The project
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The projet has been developed as part of the web developement training program at [Wild Code School](https://www.wildcodeschool.com/en-GB), for 5 weeks (April / May 2020). 
 
-### `npm test`
+The aim was to create a React.js application and manipulate data from an API. We also learnt and applied the agile methods (in particular SCRUM). In doing so, we strated by designing a wireframe, we elaborated a product backlog by defining the different user stories and the implicated tech tasks. Finally, along the project we used Trello to better organise and track our progress. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Futhermore, in order to create an even more personalised user experience and to anticipate the second part of the web development training program, we decided to create a backend to enable the storage of the user favorite songs and his scores.  👉 You can find the source code [here](https://github.com/SebG-prog/WCS-P2-Thunder-Back).
 
-### `npm run build`
+This 5-week project has been an even bigger challenge for our team as we were working remotly, given the global health crisis we were experiencing due to the Coronavirus. Thanks to our rigour and determination, we have succeeded in developing this fully functional application.
+ 
+## Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Ability to play the game without any user account
+* Choice between two game modes : 
+  - Standard mode: 10 songs 
+  - Survival mode: unlimited songs
+* Creation and management of user accounts
+* In the result page, play/pause button that allows to listen to the songs played during the game session
+* Ability to store the tracks in the user favorite list (user account required)
+* Display the rankings per musical genre
+* User page that contains the user favorite tracklist and the user top scores
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Frontend**
 
-### `npm run eject`
+* React.js
+* JavaScript
+* HTML5
+* CSS3
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Backend**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Node.js
+* Express.js
+* MySQL
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can find the source code [here](https://github.com/SebG-prog/WCS-P2-Thunder-Back)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Hosting
 
-## Learn More
+* Netlify for the frontend
+* Heroku for the backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👉 [Napster](https://developer.napster.com/api/v2.2)
 
-### Code Splitting
+## Potential improvements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* Develop multiple levels of difficulties
+* Create a reward system
+* Provide more information on the artists (concerts for instance)
+* Creation of 3 types of user profiles (melomane, gamer and regular player)
+* Develop a multiplayer mode
 
-### Analyzing the Bundle Size
+## Screenshots
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<div style="display:flex; justify-content:space-around; margin:30px 0;">
+<img src="/public/img/welcomepage.png" alt="Welcome page desktop"/>
+<img src="/public/img/modepage.png" alt="Mode page desktop"/>
+<img src="/public/img/gamesession.png" alt="Game session desktop"/>
+<img src="/public/img/ranking.png" alt="Ranking page desktop"/>
+<img src="/public/img/userpage.png" alt="User page desktop"/>
+</div>
 
-### Making a Progressive Web App
+<div style="display:flex; justify-content:space-around; margin:30px 0;">
+<img src="/public/img/welcomepage_mobile.png" alt="Welcome page mobile"/>
+<img src="/public/img/themepage_mobile.png" alt="Theme page mobile"/>
+<img src="/public/img/modepage_mobile.png" alt="Mode page mobile"/>
+<img src="/public/img/gamesession_mobile.png" alt="Game session mobile"/>
+<img src="/public/img/endsession_mobile.png" alt="Game session mobile"/>
+<img src="/public/img/ranking_mobile.png" alt="Ranking page mobile"/>
+<img src="/public/img/userpage_mobile.png" alt="User page mobile"/>
+</div>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## In the project directory, you can run:
+* `npm install`
+* `npm start`
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+These commands install the dependencies and start the app in the developement mode.
